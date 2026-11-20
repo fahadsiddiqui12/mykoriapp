@@ -1,5 +1,5 @@
-import MeditationPlayIcon from '@/assets/images/meditation_play_icon.svg';
 import SearchInputIcon from '@/assets/images/search_field_icon.svg';
+import MeditationCard from '@/components/meditation/MeditationCard';
 import { categories, meditations } from '@/data/meditations';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
@@ -66,14 +66,16 @@ export default function MeditationSearch(){
             <View>
 
                 {/* Yahn pr meditation kay saaray card load ho rhay hain */}
+                
                 <Text style={[styles.chipBoxTitle,styles.chipBoxTitleSpace]}>{activeChipCategory}</Text> 
                 {
                     filteredMeditations.map( (itemscard) => (
-                        <Pressable key={itemscard.id} style={styles.meditationSingleCard} onPress={()=> {console.log(itemscard.category)}}>
-                            <MeditationPlayIcon width={15} height={15} color="#F1CA93"/>
-                            <Text style={styles.meditationCardLargeText}>{itemscard.title}</Text>
-                            <Text style={styles.meditationCardSmallText}>{itemscard.duration}</Text>
-                        </Pressable>))
+                       <MeditationCard
+                        key={itemscard.id}
+                        title={itemscard.title}
+                        duration={itemscard.duration}
+                       />
+                    ))
                 }
                 
                 {/* Jb koi meditation category ma available nae ha tw ya show hojayee ga */}
@@ -90,29 +92,12 @@ export default function MeditationSearch(){
     );
 }
 const styles = StyleSheet.create({
-    meditationCardLargeText:{
-        color:'#D4AF7A',
-        fontSize:16,
-        flex:1
-    },
     chipBoxTitleSpace:{
         marginBottom:10
     },
     meditationCardSmallText:{
         color:'#fff',
         fontSize:12
-    },
-    meditationSingleCard:{
-        flexDirection:'row',
-        alignItems:'center',
-        backgroundColor:'#100B28',
-        borderWidth:1,
-        borderStyle:'solid',
-        borderColor:'#D4AF7A',
-        borderRadius:10,
-        padding:13,
-        marginBottom:10,
-        gap:10
     },
     chipSingleCatActive:{
         backgroundColor:'#D4AF7A',
