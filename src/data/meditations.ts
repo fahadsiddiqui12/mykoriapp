@@ -1,3 +1,12 @@
+import MeditationIcon1 from '@/assets/images/meditation_icon1.svg'
+import MeditationIcon2 from '@/assets/images/meditation_icon2.svg'
+import MeditationIcon3 from '@/assets/images/meditation_icon3.svg'
+import MeditationIcon4 from '@/assets/images/meditation_icon4.svg'
+import MeditationIcon5 from '@/assets/images/meditation_icon5.svg'
+import MeditationIcon6 from '@/assets/images/meditation_icon6.svg'
+import MeditationIcon7 from '@/assets/images/meditation_icon7.svg'
+import MeditationIcon8 from '@/assets/images/meditation_icon8.svg'
+
 export const categories = [
   'Stress',
   'Sleep',
@@ -7,7 +16,7 @@ export const categories = [
   'Confidence',
   'Morning',
   'Energy Reset',
-  'Focus',
+  'Evening',
 ];
 
 export const meditations = [
@@ -18,3 +27,14 @@ export const meditations = [
   { id: '5', title: 'Let It Go',      category: 'Stress',  duration: '10 min' },
   { id: '6', title: 'Calm Breath',    category: 'Anxiety', duration: '8 min'  },
 ];
+
+export const meditationsCategoryCards = [
+  { id: '1', name: 'Stress',      subtitle: '14 sessions',      icon: MeditationIcon1 },
+  { id: '2', name: 'Sleep',       subtitle: '18 slumber rites', icon: MeditationIcon2 },
+  { id: '3', name: 'Healing',     subtitle: '11 restorative',   icon: MeditationIcon3 },
+  { id: '4', name: 'Mindfulness', subtitle: '16 practices',     icon: MeditationIcon4 },
+  { id: '5', name: 'Anxiety',     subtitle: '9 sanctuaries',    icon: MeditationIcon5 },
+  { id: '6', name: 'Confidence',  subtitle: '8 solar flows',    icon: MeditationIcon6 },
+  { id: '7', name: 'Morning',     subtitle: 'Dawn awaken',      icon: MeditationIcon7 },
+  { id: '8', name: 'Evening',     subtitle: 'Dusk release',     icon: MeditationIcon8 },
+]

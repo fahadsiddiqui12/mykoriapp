@@ -13,7 +13,6 @@ import SoundBalanceIconOne from '@/assets/images/sound_balance_icon1.svg';
 import SoundBalanceIconTwo from '@/assets/images/sound_balance_icon2.svg';
 
 import PlayerStarsIcon from '@/assets/images/player_stars_icon.svg';
-import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
@@ -229,11 +228,11 @@ export default function SingleMainPlayerBox()
 
             </View>
 
-            <View>
+            {/* <View>
                 <Pressable onPress={() => router.push('/(screens)/meditation/search')}>
                     <Text style={styles.BigYellowTxt}>Search</Text>
                 </Pressable>
-            </View>
+            </View> */}
 
         </>
     );

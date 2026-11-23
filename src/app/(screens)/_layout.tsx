@@ -22,8 +22,9 @@ export default function ScreensLayout() {
           contentStyle: { backgroundColor: 'transparent' },
         }}
       >
-        <Stack.Screen name="meditation/meditation-single" options={{ title: 'Meditate' }} />
-        <Stack.Screen name="meditation/search" options={{ title: 'Meditate Search' }} />
+        <Stack.Screen name="meditation/index" options={{ title: 'Meditations' }} />
+        <Stack.Screen name="meditation/meditation-single" options={{ title: 'Meditation' }} />
+        <Stack.Screen name="meditation/search" options={{ title: 'Meditation Search' }} />
       </Stack>
     </ImageBackground>
   );

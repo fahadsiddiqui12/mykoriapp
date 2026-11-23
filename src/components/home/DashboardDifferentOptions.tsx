@@ -1,5 +1,3 @@
-import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import CurveIconOne from '@/assets/images/dashboard_op_curve_icon1.svg';
 import CurveIconTwo from '@/assets/images/dashboard_op_curve_icon2.svg';
 import IconOne from '@/assets/images/dashboard_op_icon1.svg';
@@ -10,6 +8,8 @@ import IconFive from '@/assets/images/dashboard_op_icon5.svg';
 import IconSix from '@/assets/images/dashboard_op_icon6.svg';
 import IconSeven from '@/assets/images/dashboard_op_icon7.svg';
 import IconEight from '@/assets/images/dashboard_op_icon8.svg';
+import { useRouter } from 'expo-router';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function DashbaoardDifferentOptions ()
 {
@@ -70,7 +70,7 @@ export default function DashbaoardDifferentOptions ()
                 </Pressable>
 
                 {/* OP 5 */}
-                <Pressable style={styles.opTextImageBox} onPress={() => router.push('/meditation/meditation-single')}>
+                <Pressable style={styles.opTextImageBox} onPress={() => router.navigate('/(screens)/meditation')}>
                     <View style={styles.diffOpImageBox}>
                         <CurveIconOne width={25} height={25} color="#F1CA93" style={styles.curveIconOne}/>
                             <IconFive width={40} height={40} color="#F1CA93" style={styles.opMainIcon}/>
