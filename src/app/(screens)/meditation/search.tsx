@@ -1,6 +1,7 @@
 import SearchInputIcon from '@/assets/images/search_field_icon.svg';
+import CategoryChips from '@/components/meditation/CategoryChips';
 import MeditationCard from '@/components/meditation/MeditationCard';
-import { categories, meditations } from '@/data/meditations';
+import { meditations } from '@/data/meditations';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
@@ -33,33 +34,7 @@ export default function MeditationSearch(){
             </View>
             
             {/* Categories Chips list */}
-            <View style={styles.mainChipsBox}>
-                    
-                <Text style={styles.chipBoxTitle}>
-                    Nine Categories
-                </Text> 
-                
-                {
-                    categories.map(
-                        (cats) => (
-                            <Pressable key={cats} 
-                                onPress={() => handleActiveChipCategory(cats)}
-                                style={[
-                                    styles.chipSingleCat,
-                                    activeChipCategory === cats && styles.chipSingleCatActive
-                                ]} 
-                                >
-                                <Text style={[
-                                        styles.chipCatText,
-                                        activeChipCategory === cats && styles.chipCatTextActive
-                                        ]}>
-                                    {cats}
-                                </Text>
-                            </Pressable>
-                        )
-                    )
-                }
-            </View>
+            <CategoryChips active={activeChipCategory} onSelect={handleActiveChipCategory}/>
 
             {/* Meditation card ka box ha ya */}
 
