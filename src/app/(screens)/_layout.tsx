@@ -25,6 +25,7 @@ export default function ScreensLayout() {
         <Stack.Screen name="meditation/index" options={{ title: 'Meditations' }} />
         <Stack.Screen name="meditation/meditation-single" options={{ title: 'Meditation' }} />
         <Stack.Screen name="meditation/search" options={{ title: 'Meditation Search' }} />
+        <Stack.Screen name='meditation/category/[name]' options={{title: 'Category'}}/>
       </Stack>
     </ImageBackground>
   );

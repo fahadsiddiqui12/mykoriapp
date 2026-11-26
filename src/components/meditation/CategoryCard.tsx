@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SvgProps } from 'react-native-svg';
 
@@ -11,7 +12,10 @@ export default function CategoryCards({name,subtitle,icon}: CategoryCardsProps){
     const Icon = icon;
     return(
         <>
-            <Pressable style={styles.categoryPressBox}>
+            <Pressable style={styles.categoryPressBox} onPress={() => router.push({
+                    pathname: '/meditation/category/[name]',
+                    params: { name: name },
+                })}>
                 <View style={styles.categoryIconBox}>
                     <Icon width={20} height={20} color="#2C2107"/>
                 </View>
