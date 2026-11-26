@@ -3,11 +3,11 @@ import { meditations } from '@/data/meditations';
 import { Stack, useLocalSearchParams } from "expo-router";
 import { ScrollView, StyleSheet, Text } from "react-native";
 
-export default function MedicationCategory() {
+export default function MeditationCategory() {
     const {name} = useLocalSearchParams<{ name: string }>();
 
     const filteredMeditations = meditations.filter(
-            (itemCat) =>  itemCat.category == name 
+            (itemCat) =>  itemCat.category === name 
     )
     
 

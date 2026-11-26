@@ -19,6 +19,10 @@ export default function MeditationSearch(){
 
     const filteredMeditations = meditations.filter((itemscard)=> ( itemscard.category == activeChipCategory));
 
+    const searchedMeditation = meditations.filter( (item) => item.title.toLowerCase().includes(searchText.toLowerCase()));
+
+    const meditationsToShow = searchText !== '' ? searchedMeditation : filteredMeditations;
+
     return(
         <ScrollView contentContainerStyle={styles.scrollContent}>
             
@@ -42,9 +46,11 @@ export default function MeditationSearch(){
 
                 {/* Yahn pr meditation kay saaray card load ho rhay hain */}
                 
-                <Text style={[styles.chipBoxTitle,styles.chipBoxTitleSpace]}>{activeChipCategory}</Text> 
+                <Text style={[styles.chipBoxTitle,styles.chipBoxTitleSpace]}>
+                    {searchText !== '' ? `Results for "${searchText}"` : activeChipCategory}
+                </Text> 
                 {
-                    filteredMeditations.map( (itemscard) => (
+                    meditationsToShow.map( (itemscard) => (
                        <MeditationCard
                         key={itemscard.id}
                         title={itemscard.title}
@@ -54,9 +60,9 @@ export default function MeditationSearch(){
                 }
                 
                 {/* Jb koi meditation category ma available nae ha tw ya show hojayee ga */}
-                {filteredMeditations.length === 0 && (
+                {meditationsToShow.length === 0 && (
                     <Text style={styles.meditationCardSmallText}>
-                        No medidation available in this category yet!
+                        {searchText !== '' ? 'No meditation found. Try another word!' : 'No meditation available in this category yet!'}
                     </Text>
                 )}
 

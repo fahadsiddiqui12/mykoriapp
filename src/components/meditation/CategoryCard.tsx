@@ -12,7 +12,7 @@ export default function CategoryCards({name,subtitle,icon}: CategoryCardsProps){
     const Icon = icon;
     return(
         <>
-            <Pressable style={styles.categoryPressBox} onPress={() => router.push({
+            <Pressable style={styles.categoryPressBox} onPress={() => router.navigate({
                     pathname: '/meditation/category/[name]',
                     params: { name: name },
                 })}>
