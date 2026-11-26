@@ -1,3 +1,4 @@
+import FavoriteIcon from '@/assets/images/mediation_favorites_icon.svg'
 import MeditationIcon1 from '@/assets/images/meditation_icon1.svg'
 import MeditationIcon2 from '@/assets/images/meditation_icon2.svg'
 import MeditationIcon3 from '@/assets/images/meditation_icon3.svg'
@@ -6,6 +7,7 @@ import MeditationIcon5 from '@/assets/images/meditation_icon5.svg'
 import MeditationIcon6 from '@/assets/images/meditation_icon6.svg'
 import MeditationIcon7 from '@/assets/images/meditation_icon7.svg'
 import MeditationIcon8 from '@/assets/images/meditation_icon8.svg'
+import RecentIcon from '@/assets/images/meditation_recent_icon.svg'
 
 export const categories = [
   'Stress',
@@ -37,4 +39,9 @@ export const meditationsCategoryCards = [
   { id: '6', name: 'Confidence',  subtitle: '8 solar flows',    icon: MeditationIcon6 },
   { id: '7', name: 'Morning',     subtitle: 'Dawn awaken',      icon: MeditationIcon7 },
   { id: '8', name: 'Evening',     subtitle: 'Dusk release',     icon: MeditationIcon8 },
+]
+
+export const recentFavoriteData = [
+  { id: '1', name: 'Favorites', subtitle: '6 saved', icon: FavoriteIcon },
+  { id: '2', name: 'Recent',  subtitle: 'Resume play', icon: RecentIcon },
 ]

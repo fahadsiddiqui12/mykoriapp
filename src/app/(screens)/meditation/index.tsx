@@ -4,7 +4,7 @@ import SearchFilterIcon from '@/assets/images/meditaion-filter_icon.svg';
 import SearchFieldIcon from '@/assets/images/search_field_icon.svg';
 import CategoryCards from '@/components/meditation/CategoryCard';
 import QuickLinkCard from '@/components/meditation/QuickLinkCard';
-import { meditationsCategoryCards } from '@/data/meditations';
+import { meditationsCategoryCards, recentFavoriteData } from '@/data/meditations';
 import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
@@ -56,8 +56,15 @@ export default function MeditationHome() {
                 </Pressable>
 
                 {/* QuickLink */}
+                
+                <View style={styles.bottomTwoBoxes}>
+                    {
+                        recentFavoriteData.map( (boxdata) => (
+                            <QuickLinkCard key={boxdata.id} name={boxdata.name} subtitle={boxdata.subtitle} icon={boxdata.icon}/>
+                        ))
+                    }
+                </View>
 
-                <QuickLinkCard/>
 
             </ScrollView>
         </>
@@ -65,6 +72,11 @@ export default function MeditationHome() {
 }
 
 const styles = StyleSheet.create({
+    bottomTwoBoxes:{
+        flexDirection:'row',
+        gap:'4%',
+        marginTop:10
+    },
     featuredAlltitles:{
         flexDirection:'row',
         flexWrap:'wrap',
